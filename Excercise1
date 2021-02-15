@@ -1,0 +1,40 @@
+//TryCatch.java
+
+package com.cg.exception;
+
+class AgeException extends Exception{
+	/* private String msg; */
+	public AgeException(String msg) {
+		/* this.msg=msg; */
+		System.out.println(msg);
+	}
+		
+	/*
+	 * public String toString() { return msg; }
+	 */
+	 
+	
+}
+
+public class ExcepDemo {
+	
+	public void setage(int age) throws AgeException{
+		
+		if(age<15)
+			throw new AgeException("Invalid Age");
+		System.out.println("Age:"+age);
+	}
+	public static void main(String[] Args) {
+		
+		ExcepDemo obj=new ExcepDemo();
+		try {
+			obj.setage(10);
+		}
+		catch(AgeException e) {
+			System.out.println(e);
+		}
+		
+		
+	}
+
+}
