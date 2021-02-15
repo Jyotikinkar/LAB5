@@ -1,0 +1,44 @@
+//SalExcep.java
+
+package com.cg.cis.Exception;
+
+class SalException extends Exception{
+	 private String msg; 
+	public SalException(String msg) {
+		 this.msg=msg; 
+	}
+	
+	public String toString() {
+		return msg;
+	}
+	
+}
+
+public class SalExcepLAB5 {
+	
+	public void name(String s) {
+		System.out.println("Name:"+s);
+	}
+	
+	public void sal(double sal) throws SalException {
+		if(sal<3000)
+			throw new SalException("Salary less than 3000");
+		else
+			System.out.println("Salary:"+sal);	
+	}
+	
+	public static void main(String[] Args) {
+		
+		SalExcepLAB5 obj=new SalExcepLAB5();
+		try {
+			obj.name("Jyotikinkar");
+			obj.sal(2000);
+		}
+		catch(SalException e) {
+			System.out.println(e);
+		}
+		
+		
+	}
+	
+}
